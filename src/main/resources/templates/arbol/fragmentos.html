@@ -40,8 +40,8 @@
                               method="POST" class="was-validated" enctype="multipart/form-data">
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label for="descripcion">[[#{arbol.nombre_cientifico}]]</label>
-                                    <input type="text" class="form-control" name="nombre_cientifico" required="true"/>
+                                    <label for="descripcion">[[#{arbol.descripcion}]]</label>
+                                    <input type="text" class="form-control" name="descripcion" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="activo">[[#{arbol.activo}]]</label>
@@ -79,7 +79,7 @@
                                 <table class="table table-striped table-hover">
                                     <thead class="table-dark">
                                         <tr><th>#</th>
-                                            <th>[[#{arbol.nombre_cientifico}]]</th>
+                                            <th>[[#{arbol.descripcion}]]</th>
                                             <th>[[#{arbol.nombre_comun}]]</th>
                                             <th>[[#{arbol.activo}]]</th>
                                             <th></th></tr>
@@ -87,7 +87,7 @@
                                     <tbody>
                                         <tr th:each="arbol, contador : ${arboles}">
                                             <td>[[${contador.count}]]</td>
-                                            <td>[[${arbol.nombre_cientifico}]]</td>
+                                            <td>[[${arbol.descripcion}]]</td>
                                             <td th:text="${arbol.activo} ? 'Activa' : 'Inactiva'" />
                                             <td><a th:href="@{/arbol/eliminar/}+${arbol.id_arbol}"
                                                    class="btn btn-danger">
@@ -138,9 +138,9 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="mb-3">
-                                                    <label for="nombre_cientifico">[[#{arbol.nombre_cientifico}]]</label>
+                                                    <label for="descripcion">[[#{arbol.descripcion}]]</label>
                                                     <input type="text" class="form-control" 
-                                                           name="nombre_cientifico" th:field="*{nombre_cientifico}"
+                                                           name="descripcion" th:field="*{descripcion}"
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">

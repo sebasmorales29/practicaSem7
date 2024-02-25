@@ -41,11 +41,11 @@ public class ArbolController {
             @RequestParam("imagenFile") MultipartFile imagenFile) {        
         if (!imagenFile.isEmpty()) {
             arbolService.save(arbol);
-            arbol.setRutaImagen(
+            arbol.setruta_imagen(
                     firebaseStorageService.cargaImagen(
                             imagenFile, 
                             "arbol", 
-                            arbol.getIdArbol()));
+                            arbol.getid_arbol()));
         }
         arbolService.save(arbol);
         return "redirect:/arbol/listado";

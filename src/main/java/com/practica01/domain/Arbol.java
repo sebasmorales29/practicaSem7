@@ -8,24 +8,35 @@ import lombok.Data;
 @Entity
 @Table(name = "arbol")
 
-public class Arbol implements Serializable { //serializacion porque se va almacenar ciertos datos en el disco
+public class Arbol implements Serializable { 
 
-    private static final long serialVersionUID = 1L; //para poder hacer el ciclo de la sumatoria de la arbol.
+    private static final long serialVersionUID = 1L; 
 
-    @Id //id arbol es la llave de la tabla arbol. 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Los valores generados que estrategia usan, identico a la BD 
-    @Column(name = "id_arbol") //decir cual es el nombre en la base de datos. Se hace la asociación 
-    private long idArbol;
-    private String descripcion;
-    private String rutaImagen;
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_arbol") 
+    private long id_arbol;
+    private String nombre_cientifico;
+    private String nombre_comun;
     private boolean activo;
+    private float altura_metros;
+    private char ruta_imagen;
+    
 
     public Arbol() {
     }
 
-    public Arbol(String descripcion, boolean activo) {
-        this.descripcion = descripcion;
+    public Arbol(String nombre_cientifico, boolean activo) {
+        this.nombre_cientifico = nombre_cientifico;
         this.activo = activo;
+    }
+
+    public Long getid_arbol() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setruta_imagen(String cargaImagen) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
